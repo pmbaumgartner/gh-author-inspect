@@ -1,0 +1,21 @@
+query MyQuery($search_query: String = null, $first: Int = 100) {
+  search(
+    query: $search_query,
+    type: DISCUSSION
+    first: $first
+  ) {
+    edges {
+      node {
+        ... on Discussion {
+          id
+          createdAt
+          title
+          url
+          answer {
+            id
+          }
+        }
+      }
+    }
+  }
+}

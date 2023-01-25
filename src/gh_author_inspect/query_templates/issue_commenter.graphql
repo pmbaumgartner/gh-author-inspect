@@ -1,0 +1,40 @@
+query MyQuery($search_query: String = null, $first: Int = 100) {
+  search(query: $search_query, type: ISSUE, first: $first) {
+    edges {
+      node {
+        ... on Issue {
+          title
+          url
+          createdAt
+          id
+          state
+          comments(first: 100) {
+            nodes {
+              createdAt
+              url
+              author {
+                login
+              }
+            }
+          }
+        }
+        ... on PullRequest {
+          title
+          url
+          createdAt
+          id
+          state
+          comments(first: 100) {
+            nodes {
+              createdAt
+              url
+              author {
+                login
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

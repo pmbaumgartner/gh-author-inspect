@@ -1,0 +1,22 @@
+query MyQuery($search_query: String = null, $first: Int = 100) {
+  search(query: $search_query, first: $first, type: ISSUE) {
+    edges {
+      node {
+        ... on Issue {
+          title
+          url
+          createdAt
+          id
+          state
+        }
+        ... on PullRequest {
+          title
+          url
+          createdAt
+          id
+          state
+        }
+      }
+    }
+  }
+}

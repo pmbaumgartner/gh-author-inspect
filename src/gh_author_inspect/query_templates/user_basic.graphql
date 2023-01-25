@@ -1,0 +1,15 @@
+query MyQuery($search_query: String = null, $first: Int = 100) {
+  search(query: $search_query, type: USER, first: $first) {
+    edges {
+      node {
+        ... on User {
+          id
+          login
+          name
+          url
+          createdAt
+        }
+      }
+    }
+  }
+}
