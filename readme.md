@@ -73,3 +73,42 @@ In a real terminal, there is some additional formatting applied. The title of ea
 
 <img src="demo.png">
 
+### Include Comments
+
+You can also include comments from the author with the `--comments/-c` flag, e.g.
+
+```
+gh-author-inspect explosion/spacy pmbaumgartner --comments
+```
+
+This will include all comments by a user on a Discussion or Issue that aren't the parent (top-level) comment.
+
+## `--help` Output
+
+```
+                                                                      
+ Usage: gh-author-inspect [OPTIONS] REPO AUTHOR                       
+                                                                      
+ This tool executes queries against the GitHub Search API for the     
+ user and repository given. It looks up Issues/PRs and Discussions    
+ created by the user and optionally also the comments made by the     
+ user.                                                                
+                                                                      
+╭─ Arguments ────────────────────────────────────────────────────────╮
+│ *    repo        TEXT  Repository name as 'owner/name'.            │
+│                        [default: None]                             │
+│                        [required]                                  │
+│ *    author      TEXT  Username (author) to search for.            │
+│                        [default: None]                             │
+│                        [required]                                  │
+╰────────────────────────────────────────────────────────────────────╯
+╭─ Options ──────────────────────────────────────────────────────────╮
+│ --comments     -c               Include user comments in addition  │
+│                                 to creations in the output         │
+│ --limit-title          INTEGER  Max length of the string for the   │
+│                                 title. `0` will not truncate at    │
+│                                 all.                               │
+│                                 [default: 50]                      │
+│ --help                          Show this message and exit.        │
+╰────────────────────────────────────────────────────────────────────╯
+```
