@@ -197,7 +197,8 @@ def process_discussion_comments(
     for edge in edges:
         title = edge["node"]["title"]
         for comment in edge["node"]["comments"]["nodes"]:
-            if comment["author"]["login"].lower() == user.lower():
+            has_author = comment.get("author", None) is not None
+            if has_author and comment["author"]["login"].lower() == user.lower():
                 date = comment["createdAt"]
                 url = comment["url"]
                 category = (
@@ -207,7 +208,8 @@ def process_discussion_comments(
                 )
                 data.append(dict(title=title, date=date, url=url, category=category))
             for reply in comment["replies"]["nodes"]:
-                if reply["author"]["login"].lower() == user.lower():
+                has_author = reply.get("author", None) is not None
+                if has_author and reply["author"]["login"].lower() == user.lower():
                     date = reply["createdAt"]
                     url = reply["url"]
                     category = "COMMENT"

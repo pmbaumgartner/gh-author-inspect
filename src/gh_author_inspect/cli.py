@@ -35,7 +35,7 @@ console = Console()
 
 def main(
     repo: str = typer.Argument(..., help="Repository name as 'owner/name'."),
-    author: str = typer.Argument(..., help="Username (author) to search for"),
+    author: str = typer.Argument(..., help="Username (author) to search for."),
     comments: bool = typer.Option(
         False,
         "--comments",
@@ -48,9 +48,8 @@ def main(
     ),
 ):
     """This tool executes queries against the GitHub Search API for the user
-    and repository given. It first looks up some basic user information, then
-    requests issues by the given author, and the second query requests discussions
-    by the given author."""
+    and repository given. It looks up Issues/PRs and Discussions created by
+    the user and optionally also the comments made by the user."""
     if OAUTH_TOKEN is None or OAUTH_TOKEN == "":
         print_token_error()
         raise typer.Exit(1)
