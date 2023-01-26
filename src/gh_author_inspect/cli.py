@@ -40,7 +40,7 @@ def main(
         False,
         "--comments",
         "-c",
-        help="Include user comments in addition to creations in the output",
+        help="Include user comments in addition to top-level content in the output",
     ),
     limit_title: int = typer.Option(
         50,

@@ -86,29 +86,24 @@ This will include all comments by a user on a Discussion or Issue that aren't th
 ## `--help` Output
 
 ```
-                                                                      
- Usage: gh-author-inspect [OPTIONS] REPO AUTHOR                       
-                                                                      
- This tool executes queries against the GitHub Search API for the     
- user and repository given. It looks up Issues/PRs and Discussions    
- created by the user and optionally also the comments made by the     
- user.                                                                
-                                                                      
-╭─ Arguments ────────────────────────────────────────────────────────╮
-│ *    repo        TEXT  Repository name as 'owner/name'.            │
-│                        [default: None]                             │
-│                        [required]                                  │
-│ *    author      TEXT  Username (author) to search for.            │
-│                        [default: None]                             │
-│                        [required]                                  │
-╰────────────────────────────────────────────────────────────────────╯
-╭─ Options ──────────────────────────────────────────────────────────╮
-│ --comments     -c               Include user comments in addition  │
-│                                 to creations in the output         │
-│ --limit-title          INTEGER  Max length of the string for the   │
-│                                 title. `0` will not truncate at    │
-│                                 all.                               │
-│                                 [default: 50]                      │
-│ --help                          Show this message and exit.        │
-╰────────────────────────────────────────────────────────────────────╯
+                                                                                        
+ Usage: gh-author-inspect [OPTIONS] REPO AUTHOR                                           
+                                                                                          
+ This tool executes queries against the GitHub Search API for the user and repository     
+ given. It looks up Issues/PRs and Discussions created by the user and optionally also    
+ the comments made by the user.                                                           
+                                                                                          
+╭─ Arguments ────────────────────────────────────────────────────────────────────────────╮
+│ *    repo        TEXT  Repository name as 'owner/name'. [default: None] [required]     │
+│ *    author      TEXT  Username (author) to search for. [default: None] [required]     │
+╰────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Options ──────────────────────────────────────────────────────────────────────────────╮
+│ --comments     -c               Include user comments in addition to top-level content │
+│                                 in the output                                          │
+│ --limit-title          INTEGER  Max length of the string for the title. `0` will not   │
+│                                 truncate at all.                                       │
+│                                 [default: 50]                                          │
+│ --help                          Show this message and exit.                            │
+╰────────────────────────────────────────────────────────────────────────────────────────╯
+
 ```
