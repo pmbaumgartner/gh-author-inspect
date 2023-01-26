@@ -1,4 +1,4 @@
-# Repo Author Inspect
+# GitHub Repo Author Inspect
 
 A simple CLI tool to view issues, PRs, and discussions by an author on a repo.
 
